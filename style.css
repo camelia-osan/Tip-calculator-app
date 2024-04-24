@@ -1,0 +1,494 @@
+html,
+body {
+    height: 100%;
+    background-color: hsl(185, 41%, 84%);
+    font-family: 'Space Mono', monospace;
+}
+
+::placeholder {
+    color: hsl(184, 14%, 56%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+}
+
+.splitter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.logo {
+    width: 7vw;
+    height: 4vw;
+}
+
+.calculator {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    width: 70vw;
+    height: 36vw;
+    font-size: 1.25vw;
+    border-radius: 2vw;
+}
+
+.bill {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    margin: 0 3.25vw 2vw 3.25vw;
+    color: hsl(186, 14%, 43%);
+    gap: 2vw;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 87%;
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 1.25vw;
+    margin-right: 2.5vw;
+}
+
+.firstSection,
+.secondSection,
+.thirdSection {
+    width: 100%;
+}
+
+.peopleNumberText,
+.billText {
+    display: flex;
+    justify-content: space-between;
+}
+
+.numInputContainer {
+    width: 100%;
+    height: 3.25vw;
+    background-color: hsl(189, 41%, 97%);
+    border-radius: 0.5vw;
+}
+
+.numInput {
+    width: 98%;
+    height: 3vw;
+    text-align: right;
+    border: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.75vw;
+    color: hsl(183, 100%, 15%);
+    cursor: pointer;
+}
+
+.numInput:focus {
+    outline: none !important;
+    border: solid;
+    border-radius: 0.5vw;
+    border-color: hsl(172, 67%, 45%);
+}
+
+#billPrice {
+    background: url(images/icon-dollar.svg) no-repeat scroll 1.5vw 1vw;
+    background-size: 0.85vw;
+}
+
+#peopleNumber {
+    background: url(images/icon-person.svg) no-repeat scroll 1.5vw 1vw;
+    background-size: 0.85vw;
+}
+
+.warning {
+    display: none;
+    color: rgb(209, 58, 7);
+}
+
+.warning-active {
+    display: block;
+    color: rgb(209, 58, 7);
+}
+
+.peopleInput-active,
+.billInput-active {
+    border: solid rgb(209, 58, 7);
+    border-radius: 0.25em;
+}
+
+.tipAmount,
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.tipAmount {
+    margin-top: 0.5vw;
+}
+
+.total {
+    margin-top: -4vw;
+}
+
+.resultsTitle {
+    margin-left: 3vw;
+    color: white;
+}
+
+.resultsPrice {
+    margin-right: 3vw;
+    color: hsl(172, 67%, 45%);
+    font-size: 3.5vw;
+}
+
+.personSpan {
+    color: #6f969b;
+    font-size: 1vw;
+}
+
+.tipBtns {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 9.25vw 9.25vw 9.25vw;
+    grid-gap: 1vw;
+}
+
+.btn {
+    background-color: hsl(183, 100%, 15%);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    height: 3.5vw;
+    border-radius: 0.5vw;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.75vw;
+    cursor: pointer;
+}
+
+.active-btn {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+.btn:hover {
+    background-color: #9fe8df;
+}
+
+.customChoice {
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(183, 100%, 15%);
+    text-align: center;
+    height: 3.25vw;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.75vw;
+}
+
+.customChoice:focus {
+    outline: none !important;
+    height: 3vw;
+    border: solid;
+    border-radius: 0.5vw;
+    border-color: hsl(172, 67%, 45%);
+}
+
+.resetBtn {
+    width: 80%;
+    height: 3.5vw;
+    border: none;
+    border-radius: 0.5vw;
+    font-size: 1.25vw;
+    font-weight: bold;
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(172, 67%, 45%);
+    margin-top: 6.25vw;
+    cursor: pointer;
+}
+
+.resetBtn:disabled,
+.resetBtn:disabled:hover {
+    cursor: auto;
+    background-color: #0d686d;
+    color: #065f65;
+}
+
+.resetBtn:hover {
+    background-color: #9fe8df;
+}
+
+
+/* Media queries for screen compatibility */
+@media only screen and (max-width: 481px) {
+    .container {
+        height: 100vh;
+    }
+
+    .calculator {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 300vw;
+        border-radius: 5.5vw;
+        font-size: 4vw;
+    }
+
+    .splitter {
+        margin-top: 6vw;
+        margin-bottom: 10vw;
+    }
+
+    .logo {
+        width: 25vw;
+        height: 15vw;
+    }
+
+    .bill {
+        height: 110vw;
+        width: 82vw;
+        margin-top: 4vw;
+        gap: 4vw;
+    }
+
+    .firstSection {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .numInputContainer {
+        width: 100%;
+        height: 10vw;
+        border-radius: 1.5vw;
+    }
+
+    .numInput {
+        width: 95%;
+        padding-right: 3vw;
+        height: 10vw;
+        font-size: 6vw;
+    }
+
+    .numInput:focus,
+    .customChoice:focus {
+        border-radius: 1.5vw;
+    }
+
+    #billPrice {
+        background: url(images/icon-dollar.svg) no-repeat scroll 5vw 3vw;
+        background-size: 3vw;
+    }
+
+    #peopleNumber {
+        background: url(images/icon-person.svg) no-repeat scroll 5vw 3vw;
+        background-size: 3vw;
+    }
+
+    .peopleNumberText,
+    .billText {
+        width: 74vw;
+    }
+
+    .results {
+        width: 85vw;
+        height: 72vw;
+        margin-left: 2.5vw;
+        margin-top: 8vw;
+        margin-bottom: 5vw;
+        border-radius: 3.5vw;
+    }
+
+    .tipBtns {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 39vw 39vw;
+        grid-gap: 3.5vw;
+    }
+
+    .btn {
+        height: 12vw;
+        border-radius: 1.5vw;
+        font-size: 6vw;
+    }
+
+    .customChoice {
+        height: 12vw;
+        border-radius: 1.5vw;
+        font-size: 6vw;
+    }
+
+    .customChoice:focus {
+        height: 11vw;
+    }
+
+    .total {
+        margin-top: -9vw;
+    }
+
+    .resultsTitle {
+        margin-top: 9vw;
+        margin-left: 6vw;
+    }
+
+    .resultsPrice {
+        margin-right: 6vw;
+        margin-top: 10vw;
+        font-size: 8vw;
+    }
+
+    .resetBtn {
+        width: 85%;
+        height: 12vw;
+        border-radius: 1.5vw;
+        font-size: 4vw;
+        color: hsl(183, 100%, 15%);
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+    }
+
+    .personSpan {
+        font-size: 3.5vw;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1025px) and (orientation: portrait) {
+    .container {
+        height: 100vh;
+    }
+
+    .calculator {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 300vw;
+        border-radius: 5.5vw;
+        font-size: 4vw;
+    }
+
+    .splitter {
+        margin-top: 11vw;
+        margin-bottom: 10vw;
+    }
+
+    .logo {
+        width: 25vw;
+        height: 15vw;
+    }
+
+    .bill {
+        height: 110vw;
+        width: 82vw;
+        margin-top: 4vw;
+        gap: 4vw;
+    }
+
+    .firstSection {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .numInputContainer {
+        width: 100%;
+        height: 10vw;
+        border-radius: 1.5vw;
+    }
+
+    .numInput {
+        width: 95%;
+        padding-right: 3vw;
+        height: 10vw;
+        font-size: 6vw;
+    }
+
+    .numInput:focus,
+    .customChoice:focus {
+        border-radius: 1.5vw;
+    }
+
+    #billPrice {
+        background: url(images/icon-dollar.svg) no-repeat scroll 5vw 3vw;
+        background-size: 3vw;
+    }
+
+    #peopleNumber {
+        background: url(images/icon-person.svg) no-repeat scroll 5vw 3vw;
+        background-size: 3vw;
+    }
+
+    .peopleNumberText,
+    .billText {
+        width: 74vw;
+    }
+
+    .results {
+        width: 85vw;
+        height: 72vw;
+        margin-left: 2.5vw;
+        margin-top: 8vw;
+        margin-bottom: 5vw;
+        border-radius: 3.5vw;
+    }
+
+    .tipBtns {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 39vw 39vw;
+        grid-gap: 3.5vw;
+    }
+
+    .btn {
+        height: 12vw;
+        border-radius: 1.5vw;
+        font-size: 6vw;
+    }
+
+    .customChoice {
+        height: 12vw;
+        border-radius: 1.5vw;
+        font-size: 6vw;
+    }
+
+    .customChoice:focus {
+        height: 11vw;
+    }
+
+    .total {
+        margin-top: -9vw;
+    }
+
+    .resultsTitle {
+        margin-top: 9vw;
+        margin-left: 6vw;
+    }
+
+    .resultsPrice {
+        margin-right: 6vw;
+        margin-top: 10vw;
+        font-size: 8vw;
+    }
+
+    .resetBtn {
+        width: 85%;
+        height: 12vw;
+        border-radius: 1.5vw;
+        font-size: 4vw;
+        color: hsl(183, 100%, 15%);
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+    }
+
+    .personSpan {
+        font-size: 3.5vw;
+    }
+}

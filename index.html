@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Logo -->
+    <div class="splitter">
+      <img src="images/logo.svg" alt="Splitter" class="logo" />
+    </div> <!-- END splitter -->
+
+    <!-- Calculator body -->
+    <div class="calculator">
+
+      <!-- Bill / left side -->
+      <div class="bill">
+        <div class="firstSection"> <!-- Bill input -->
+          <div class="billText">
+            <p class="text">Bill</p>
+            <p class="text warning" id="warningBillText">Can't be zero</p>
+          </div>
+          <div class="numInputContainer">
+            <input type="number" class="numInput" id="billPrice" name="billPrice" min="0" placeholder="0" />
+          </div>
+        </div>
+
+        <div class="secondSection"> <!-- Tip selection -->
+          <p class="text">Select Tip %</p>
+          <div class="tipBtns">
+            <input type="button" id="fivePercentTip" class="btn" value="5%" />
+            <input type="button" class="btn" value="10%" />
+            <input type="button" class="btn" value="15%" />
+            <input type="button" class="btn" value="25%" />
+            <input type="button" class="btn" value="50%" />
+            <input type="number" id="customChoice" class="customChoice" min="0" placeholder="Custom" />
+          </div>
+        </div>
+
+        <div class="thirdSection"> <!-- Number of persons input -->
+          <div class="peopleNumberText">
+            <p class="text">Number of People</p>
+            <p class="text warning" id="warningPeopleText">Can't be zero</p>
+          </div>
+          <div class="numInputContainer">
+            <input type="number" class="numInput" id="peopleNumber" min="0" placeholder="0" />
+          </div>
+        </div>
+      </div> <!-- END bill -->
+
+      <!-- Results / right side -->
+      <div class="results">
+        <div class="tipAmount">
+          <p class="resultsTitle">Tip Amount <span class="personSpan"><br />/ person</span></p>
+          <h2 id="tipAmount" class="resultsPrice">$0.00</h2>
+        </div>
+        <div class="total">
+          <p class="resultsTitle">Total <span class="personSpan"><br />/ person</span></p>
+          <h2 id="totalPrice" class="resultsPrice">$0.00</h2>
+        </div>
+        <button class="resetBtn" onclick="location.reload()" id="resetButton" disabled>RESET</button>
+      </div> <!-- END results -->
+    </div> <!-- END calculator -->
+  </div> <!-- END container -->
+</body>
+
+<script src="script.js"></script>
+
+</html>
