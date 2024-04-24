@@ -35,8 +35,11 @@ I made a function that checks if the inputs are 0, in which case I made the defa
 
 
 The values for the tip amount and total per person are calculated with the following formulas:
+
 $tip amount per person = (bill * (tip / 100)) / number of people$
+
 $total per person = (bill / number of people) + tip amount per person$
+
 , using each user input value and rounding it up to two decimals. The results change accordingly, even if just one of the inputs is modified.
 
 
