@@ -46,4 +46,4 @@ $total per person = (bill / number of people) + tip amount per person$
 The reset button remains disabled until all inputs are filled or selected.
 
 
-Also, I added some specific styling in different circumstances with JS, for example the inputs border becomes red when the user inputs 0 and buttons have different colors based on their state.
+Also, I added some specific styling in different circumstances with *JS*, for example the inputs border becomes red when the user inputs 0 and buttons have different colors based on their state.
